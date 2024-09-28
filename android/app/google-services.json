@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "722559298094",
+    "project_id": "memberships-18l8vg",
+    "storage_bucket": "memberships-18l8vg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722559298094:android:cb11d442ae08642c790dbf",
+        "android_client_info": {
+          "package_name": "com.spondycode.memberships"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBByzZe1hFyzBE6pB7n8vue49ZGC_oXKDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
