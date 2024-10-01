@@ -232,7 +232,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 4.0, 0.0, 0.0),
                             child: Text(
-                              'Your Account',
+                              FFLocalizations.of(context).getText(
+                                'ua1vx777' /* Your Account */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -291,7 +293,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          'Edit Profile',
+                                          FFLocalizations.of(context).getText(
+                                            'rgqbwvue' /* Edit Profile */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelLarge
                                               .override(
@@ -322,7 +326,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 16.0, 0.0, 0.0),
                             child: Text(
-                              'App Settings',
+                              FFLocalizations.of(context).getText(
+                                'm14j4pm2' /* App Settings */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -372,7 +378,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Support',
+                                        FFLocalizations.of(context).getText(
+                                          '2tll0jt3' /* Support */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -439,7 +447,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'Terms of Service',
+                                        FFLocalizations.of(context).getText(
+                                          'dkk2ffys' /* Terms of Service */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -479,7 +489,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                   context.goNamedAuth(
                                       'auth_2_Login', context.mounted);
                                 },
-                                text: 'Log Out',
+                                text: FFLocalizations.of(context).getText(
+                                  'kqtx8wqo' /* Log Out */,
+                                ),
                                 options: FFButtonOptions(
                                   width: 150.0,
                                   height: 44.0,

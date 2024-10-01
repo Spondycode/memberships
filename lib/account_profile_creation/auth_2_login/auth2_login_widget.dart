@@ -134,7 +134,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               ),
                             ),
                             Text(
-                              'flow.io',
+                              FFLocalizations.of(context).getText(
+                                'cp41z28g' /* flow.io */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
@@ -178,7 +180,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Welcome Back',
+                                  FFLocalizations.of(context).getText(
+                                    '0r4otocl' /* Welcome Back */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -191,7 +195,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 24.0),
                                   child: Text(
-                                    'Fill out the information below in order to access your account.',
+                                    FFLocalizations.of(context).getText(
+                                      '6a9c7g4d' /* Fill out the information below... */,
+                                    ),
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -214,7 +220,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       autofillHints: const [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Email',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          '5vxi2lvq' /* Email */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -288,7 +297,10 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       autofillHints: const [AutofillHints.password],
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'aqdzl16g' /* Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -385,7 +397,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       context.goNamedAuth(
                                           'HomePage', context.mounted);
                                     },
-                                    text: 'Sign In',
+                                    text: FFLocalizations.of(context).getText(
+                                      'cf9e4jgf' /* Sign In */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,
@@ -443,12 +457,18 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                             MediaQuery.of(context).textScaler,
                                         text: TextSpan(
                                           children: [
-                                            const TextSpan(
-                                              text: 'Don\'t have an account?  ',
-                                              style: TextStyle(),
+                                            TextSpan(
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'cuyoswx0' /* Don't have an account?   */,
+                                              ),
+                                              style: const TextStyle(),
                                             ),
                                             TextSpan(
-                                              text: 'Create Account',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '2yqbj5x8' /* Create Account */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -481,7 +501,9 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       context
                                           .pushNamed('auth_2_ForgotPassword');
                                     },
-                                    text: 'Forgot password?',
+                                    text: FFLocalizations.of(context).getText(
+                                      'b9yl99ij' /* Forgot password? */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,

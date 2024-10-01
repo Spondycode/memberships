@@ -13,6 +13,8 @@ export '/account_profile_creation/auth_2_profile/auth2_profile_widget.dart'
 export '/account_profile_creation/auth_2_edit_profile/auth2_edit_profile_widget.dart'
     show Auth2EditProfileWidget;
 export '/about_us/about_us_widget.dart' show AboutUsWidget;
-export '/list_of_groups/list_of_groups_widget.dart' show ListOfGroupsWidget;
-export '/add_a_group/add_a_group_widget.dart' show AddAGroupWidget;
-export '/group_detail/group_detail_widget.dart' show GroupDetailWidget;
+export '/groups/list_of_groups/list_of_groups_widget.dart'
+    show ListOfGroupsWidget;
+export '/groups/add_a_group/add_a_group_widget.dart' show AddAGroupWidget;
+export '/groups/group_detail/group_detail_widget.dart' show GroupDetailWidget;
+export '/groups/edit_group/edit_group_widget.dart' show EditGroupWidget;

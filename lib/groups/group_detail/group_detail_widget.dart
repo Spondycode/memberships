@@ -92,10 +92,23 @@ class _GroupDetailWidgetState extends State<GroupDetailWidget> {
                         true))
                   AuthUserStreamWidget(
                     builder: (context) => FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed(
+                          'EditGroup',
+                          queryParameters: {
+                            'editGroup': serializeParam(
+                              widget.groupDetails,
+                              ParamType.Document,
+                            ),
+                          }.withoutNulls,
+                          extra: <String, dynamic>{
+                            'editGroup': widget.groupDetails,
+                          },
+                        );
                       },
-                      text: 'Edit Group',
+                      text: FFLocalizations.of(context).getText(
+                        'ozl8jsmv' /* Edit Group */,
+                      ),
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 40.0,
@@ -155,7 +168,9 @@ class _GroupDetailWidgetState extends State<GroupDetailWidget> {
                                   Align(
                                     alignment: const AlignmentDirectional(-1.0, -1.0),
                                     child: Text(
-                                      'Group Admin:-',
+                                      FFLocalizations.of(context).getText(
+                                        'qrcfuhfv' /* Group Admin:- */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -221,73 +236,119 @@ class _GroupDetailWidgetState extends State<GroupDetailWidget> {
                             ),
                           ],
                         ),
-                        FFButtonWidget(
-                          onPressed: () async {
-                            await currentUserReference!.update({
-                              ...mapToFirestore(
-                                {
-                                  'Groups': FieldValue.arrayRemove(
-                                      [widget.groupDetails?.reference]),
-                                },
+                        if ((currentUserDocument?.groups.toList() ?? [])
+                                .contains(widget.groupDetails?.reference) ==
+                            true)
+                          AuthUserStreamWidget(
+                            builder: (context) =>
+                                StreamBuilder<List<GroupsRecord>>(
+                              stream: queryGroupsRecord(
+                                queryBuilder: (groupsRecord) =>
+                                    groupsRecord.where(
+                                  'groupName',
+                                  isEqualTo: widget.groupDetails?.groupName,
+                                ),
+                                singleRecord: true,
                               ),
-                            });
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text(
-                                  ' You have left the group',
-                                  style: TextStyle(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 50.0,
+                                      height: 50.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context).primary,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<GroupsRecord> leaveButtonGroupsRecordList =
+                                    snapshot.data!;
+                                // Return an empty Container when the item does not exist.
+                                if (snapshot.data!.isEmpty) {
+                                  return Container();
+                                }
+                                final leaveButtonGroupsRecord =
+                                    leaveButtonGroupsRecordList.isNotEmpty
+                                        ? leaveButtonGroupsRecordList.first
+                                        : null;
+
+                                return FFButtonWidget(
+                                  onPressed: () async {
+                                    await currentUserReference!.update({
+                                      ...mapToFirestore(
+                                        {
+                                          'Groups': FieldValue.arrayRemove([
+                                            widget.groupDetails?.reference
+                                          ]),
+                                        },
+                                      ),
+                                    });
+
+                                    await leaveButtonGroupsRecord!.reference
+                                        .update({
+                                      ...mapToFirestore(
+                                        {
+                                          'members': FieldValue.increment(-(1)),
+                                        },
+                                      ),
+                                    });
+
+                                    context.pushNamed(
+                                      'listOfGroups',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.leftToRight,
+                                        ),
+                                      },
+                                    );
+
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          ' You have left the group',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: const Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .warning,
+                                      ),
+                                    );
+                                  },
+                                  text: FFLocalizations.of(context).getText(
+                                    'msts4sjo' /* Leave Group */,
                                   ),
-                                ),
-                                duration: const Duration(milliseconds: 4000),
-                                backgroundColor:
-                                    FlutterFlowTheme.of(context).warning,
-                              ),
-                            );
-                          },
-                          text: 'Leave Group',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).warning,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Manrope',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).warning,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Manrope',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                );
+                              },
+                            ),
                           ),
-                        ),
-                        FFButtonWidget(
-                          onPressed: () {
-                            print('JoinButton pressed ...');
-                          },
-                          text: 'Join Group',
-                          options: FFButtonOptions(
-                            height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Manrope',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
                       ]
                           .divide(const SizedBox(height: 12.0))
                           .around(const SizedBox(height: 12.0)),

@@ -88,7 +88,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                 },
               ),
               title: Text(
-                'Add a Group',
+                FFLocalizations.of(context).getText(
+                  'g5x24wg0' /* Add a Group */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Urbanist',
                       color: Colors.white,
@@ -126,14 +128,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Group Name',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'hd22r8ah' /* Group Name */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'r082ksdg' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -194,14 +200,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Description',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'o60zhdyy' /* Description */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'ndvdojkk' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -325,7 +335,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                                   }
                                 }
                               },
-                              text: 'Choose a Photo',
+                              text: FFLocalizations.of(context).getText(
+                                'i0u91fds' /* Choose a Photo */,
+                              ),
                               options: FFButtonOptions(
                                 height: 40.0,
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -354,14 +366,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Admin One',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '5x4l1d9a' /* Admin One */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '99fb7jxh' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -422,14 +438,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Admin Two',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'zb6g690k' /* Admin Two */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '69ybimoc' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -490,14 +510,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Admin Three',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'tjolum4y' /* Admin Three */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'wc9tlj4t' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -554,7 +578,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Notify group of changes ....',
+                                FFLocalizations.of(context).getText(
+                                  'd2s6lryt' /* Notify group of changes .... */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -599,9 +625,22 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                             controller:
                                 _model.privacyDropDownValueController ??=
                                     FormFieldController<String>(
-                              _model.privacyDropDownValue ??= 'public',
+                              _model.privacyDropDownValue ??=
+                                  FFLocalizations.of(context).getText(
+                                '6tqaxgp4' /* public */,
+                              ),
                             ),
-                            options: const ['Public', 'Private', 'Hidden'],
+                            options: [
+                              FFLocalizations.of(context).getText(
+                                'ebp0wip3' /* Public */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'fxmgd79d' /* Private */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '0wxmreyy' /* Hidden */,
+                              )
+                            ],
                             onChanged: (val) => safeSetState(
                                 () => _model.privacyDropDownValue = val),
                             width: double.infinity,
@@ -612,7 +651,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                                   fontFamily: 'Manrope',
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Privacy Options',
+                            hintText: FFLocalizations.of(context).getText(
+                              'gtf1egz9' /* Privacy Options */,
+                            ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -636,13 +677,23 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                                     .emailSubDefaultsDropDownValueController ??=
                                 FormFieldController<String>(
                               _model.emailSubDefaultsDropDownValue ??=
-                                  'All Emails',
+                                  FFLocalizations.of(context).getText(
+                                'x816kk2k' /* All Emails */,
+                              ),
                             ),
-                            options: const [
-                              'No  Email',
-                              'Weekly Summary',
-                              'Daily Digest',
-                              'All Emails'
+                            options: [
+                              FFLocalizations.of(context).getText(
+                                '6kuecki2' /* No  Email */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'n942r3xv' /* Weekly Summary */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'rlx0zbi6' /* Daily Digest */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'fj4hpnve' /* All Emails */,
+                              )
                             ],
                             onChanged: (val) => safeSetState(() =>
                                 _model.emailSubDefaultsDropDownValue = val),
@@ -654,7 +705,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                                   fontFamily: 'Manrope',
                                   letterSpacing: 0.0,
                                 ),
-                            hintText: 'Email Subscription Defaults',
+                            hintText: FFLocalizations.of(context).getText(
+                              'zu9c7yud' /* Email Subscription Defaults */,
+                            ),
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: FlutterFlowTheme.of(context).secondaryText,
@@ -678,7 +731,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Welcome Email  Enabled....',
+                                FFLocalizations.of(context).getText(
+                                  'qf9gb77y' /* Welcome Email  Enabled.... */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -729,14 +784,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Welcome Email Title',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '71v8994v' /* Welcome Email Title */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'g8cdt02r' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -799,14 +858,18 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText: 'Welcome Email Title',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'ykmtrn5q' /* Welcome Email Title */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
                                       fontFamily: 'Manrope',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'TextField',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'vo3h2u1b' /* TextField */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -908,7 +971,9 @@ class _AddAGroupWidgetState extends State<AddAGroupWidget> {
                                 ),
                               );
                             },
-                            text: 'Save',
+                            text: FFLocalizations.of(context).getText(
+                              'pnr0gyt7' /* Save */,
+                            ),
                             options: FFButtonOptions(
                               width: double.infinity,
                               height: 40.0,

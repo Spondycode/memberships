@@ -135,7 +135,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               ),
                             ),
                             Text(
-                              'flow.io',
+                              FFLocalizations.of(context).getText(
+                                'nhhc6nhk' /* flow.io */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
@@ -179,7 +181,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Get Started',
+                                  FFLocalizations.of(context).getText(
+                                    'q98igi5l' /* Get Started */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -192,7 +196,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 0.0, 24.0),
                                   child: Text(
-                                    'Create an account by using the form below.',
+                                    FFLocalizations.of(context).getText(
+                                      '3i5apbn4' /* Create an account by using the... */,
+                                    ),
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
@@ -215,7 +221,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       autofillHints: const [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        labelText: 'Email',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'oppcggvw' /* Email */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -289,7 +298,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                       autofillHints: const [AutofillHints.password],
                                       obscureText: !_model.passwordVisibility,
                                       decoration: InputDecoration(
-                                        labelText: 'Password',
+                                        labelText:
+                                            FFLocalizations.of(context).getText(
+                                          'qh2n34zr' /* Password */,
+                                        ),
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelLarge
                                             .override(
@@ -387,7 +399,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           'auth_2_createProfile',
                                           context.mounted);
                                     },
-                                    text: 'Create Account',
+                                    text: FFLocalizations.of(context).getText(
+                                      'hesa4fb4' /* Create Account */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,
@@ -445,12 +459,18 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                             MediaQuery.of(context).textScaler,
                                         text: TextSpan(
                                           children: [
-                                            const TextSpan(
-                                              text: 'Already have an account? ',
-                                              style: TextStyle(),
+                                            TextSpan(
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'fsilimk3' /* Already have an account?  */,
+                                              ),
+                                              style: const TextStyle(),
                                             ),
                                             TextSpan(
-                                              text: 'Sign in here',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '0hbl4gcj' /* Sign in here */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium

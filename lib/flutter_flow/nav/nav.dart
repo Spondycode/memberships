@@ -143,6 +143,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'EditGroup',
+          path: '/editGroup',
+          asyncParams: {
+            'editGroup': getDoc(['Groups'], GroupsRecord.fromSnapshot),
+          },
+          builder: (context, params) => EditGroupWidget(
+            editGroup: params.getParam(
+              'editGroup',
+              ParamType.Document,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

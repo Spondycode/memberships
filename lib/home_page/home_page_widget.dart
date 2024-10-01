@@ -1,4 +1,5 @@
 import '/all_components/nav_bar1/nav_bar1_widget.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'My Club',
+                    FFLocalizations.of(context).getText(
+                      'sjsvytxn' /* My Club */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Urbanist',
                           color: Colors.white,
@@ -59,7 +62,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                   ),
                   Text(
-                    '🏡',
+                    FFLocalizations.of(context).getText(
+                      'gbxuxfy5' /* 🏡 */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Manrope',
                           fontSize: 24.0,
@@ -92,13 +97,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         Align(
                           alignment: const AlignmentDirectional(0.0, -1.0),
                           child: Text(
-                            'Welcome To The Club',
+                            FFLocalizations.of(context).getText(
+                              '9qsdwizg' /* Welcome To The Club */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
                                   fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                 ),
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Text(
+                              currentUserDisplayName,
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineLarge
+                                  .override(
+                                    fontFamily: 'Urbanist',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
                           ),
                         ),
                       ],

@@ -46,7 +46,9 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               title: Text(
-                'About Us',
+                FFLocalizations.of(context).getText(
+                  'yw4o3xpl' /* About Us */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Urbanist',
                       color: Colors.white,

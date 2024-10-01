@@ -128,7 +128,9 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                               ),
                             ),
                             Text(
-                              'flow.io',
+                              FFLocalizations.of(context).getText(
+                                '8gcg3a4n' /* flow.io */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(

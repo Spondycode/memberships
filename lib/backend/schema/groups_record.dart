@@ -75,6 +75,11 @@ class GroupsRecord extends FirestoreRecord {
   String get groupPrivacyOptions => _groupPrivacyOptions ?? '';
   bool hasGroupPrivacyOptions() => _groupPrivacyOptions != null;
 
+  // "members" field.
+  int? _members;
+  int get members => _members ?? 0;
+  bool hasMembers() => _members != null;
+
   void _initializeFields() {
     _groupName = snapshotData['groupName'] as String?;
     _headerPhoto = snapshotData['headerPhoto'] as String?;
@@ -88,6 +93,7 @@ class GroupsRecord extends FirestoreRecord {
     _welcomeEmailTitle = snapshotData['welcomeEmailTitle'] as String?;
     _welcomeEmailContent = snapshotData['welcomeEmailContent'] as String?;
     _groupPrivacyOptions = snapshotData['groupPrivacyOptions'] as String?;
+    _members = castToType<int>(snapshotData['members']);
   }
 
   static CollectionReference get collection =>
@@ -136,6 +142,7 @@ Map<String, dynamic> createGroupsRecordData({
   String? welcomeEmailTitle,
   String? welcomeEmailContent,
   String? groupPrivacyOptions,
+  int? members,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -151,6 +158,7 @@ Map<String, dynamic> createGroupsRecordData({
       'welcomeEmailTitle': welcomeEmailTitle,
       'welcomeEmailContent': welcomeEmailContent,
       'groupPrivacyOptions': groupPrivacyOptions,
+      'members': members,
     }.withoutNulls,
   );
 
@@ -173,7 +181,8 @@ class GroupsRecordDocumentEquality implements Equality<GroupsRecord> {
         e1?.welcomeEmailEnabled == e2?.welcomeEmailEnabled &&
         e1?.welcomeEmailTitle == e2?.welcomeEmailTitle &&
         e1?.welcomeEmailContent == e2?.welcomeEmailContent &&
-        e1?.groupPrivacyOptions == e2?.groupPrivacyOptions;
+        e1?.groupPrivacyOptions == e2?.groupPrivacyOptions &&
+        e1?.members == e2?.members;
   }
 
   @override
@@ -189,7 +198,8 @@ class GroupsRecordDocumentEquality implements Equality<GroupsRecord> {
         e?.welcomeEmailEnabled,
         e?.welcomeEmailTitle,
         e?.welcomeEmailContent,
-        e?.groupPrivacyOptions
+        e?.groupPrivacyOptions,
+        e?.members
       ]);
 
   @override
